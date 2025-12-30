@@ -1,0 +1,162 @@
+<!-- FILENAME: components/navbar.html -->
+<nav
+  class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-dark-bg/80 border-b border-slate-200 dark:border-slate-800"
+  id="navbar"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-20 items-center">
+      <!-- Logo -->
+      <div
+        class="flex-shrink-0 flex items-center cursor-pointer"
+        onclick="window.router.navigate('home')"
+      >
+        <i class="fa-solid fa-atom text-ai-500 text-2xl mr-2"></i>
+        <span class="font-bold text-2xl tracking-tight text-gradient"
+          >ExcellenceAI</span
+        >
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-1 items-center">
+        <button
+          onclick="window.router.navigate('home')"
+          class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          Home
+        </button>
+        <button
+          onclick="window.router.navigate('about')"
+          class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          About Us
+        </button>
+        <button
+          onclick="window.router.navigate('technology')"
+          class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          Technology
+        </button>
+        <button
+          onclick="window.router.navigate('services')"
+          class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          Services
+        </button>
+        <button
+          onclick="window.router.navigate('products')"
+          class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          Products
+        </button>
+        <button
+          onclick="window.router.navigate('clients')"
+          class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          Clients
+        </button>
+        <button
+          onclick="window.router.navigate('events')"
+          class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          Events
+        </button>
+        <button
+          onclick="window.router.navigate('team')"
+          class="nav-link px-3 py-2 rounded-md text-sm font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800 transition-colors"
+        >
+          Team
+        </button>
+
+        <!-- Theme Toggle -->
+        <button
+          id="theme-toggle"
+          class="ml-4 p-2 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:ring-2 ring-ai-500 transition-all"
+        >
+          <i class="fa-solid fa-sun" id="theme-icon"></i>
+        </button>
+
+        <button
+          onclick="window.router.navigate('contact')"
+          class="ml-2 px-5 py-2 rounded-lg bg-ai-600 text-white text-sm font-medium hover:bg-ai-700 shadow-lg shadow-ai-500/30 transition-all transform hover:scale-105"
+        >
+          Contact Us
+        </button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button
+          id="mobile-menu-btn"
+          class="text-slate-600 dark:text-slate-300 hover:text-ai-600 focus:outline-none"
+        >
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Panel -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
+  >
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <button
+        onclick="window.router.navigate('home'); window.ui.toggleMobileMenu()"
+        class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800"
+      >
+        Home
+      </button>
+      <button
+        onclick="window.router.navigate('about'); window.ui.toggleMobileMenu()"
+        class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800"
+      >
+        About Us
+      </button>
+      <button
+        onclick="window.router.navigate('technology'); window.ui.toggleMobileMenu()"
+        class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800"
+      >
+        Technology
+      </button>
+      <button
+        onclick="window.router.navigate('services'); window.ui.toggleMobileMenu()"
+        class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800"
+      >
+        Services
+      </button>
+      <button
+        onclick="window.router.navigate('products'); window.ui.toggleMobileMenu()"
+        class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800"
+      >
+        Products
+      </button>
+      <button
+        onclick="window.router.navigate('team'); window.ui.toggleMobileMenu()"
+        class="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:text-ai-600 hover:bg-ai-50 dark:hover:bg-slate-800"
+      >
+        Team
+      </button>
+
+      <!-- Mobile Theme Toggle -->
+      <div
+        class="flex items-center justify-between px-3 py-2 mt-4 border-t border-slate-200 dark:border-slate-800"
+      >
+        <span class="text-sm font-medium">Theme</span>
+        <button
+          id="theme-toggle"
+          class="p-2 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:ring-2 ring-ai-500 transition-all"
+        >
+          <i class="fa-solid fa-sun" id="theme-icon"></i>
+        </button>
+      </div>
+
+      <button
+        onclick="window.router.navigate('contact'); window.ui.toggleMobileMenu()"
+        class="block w-full text-left px-3 py-2 mt-2 rounded-md text-base font-medium bg-ai-600 text-white"
+      >
+        Contact Us
+      </button>
+    </div>
+  </div>
+</nav>

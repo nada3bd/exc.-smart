@@ -1,0 +1,88 @@
+<!-- FILENAME: pages/technology.html -->
+<div class="page-transition">
+    <div class="bg-slate-900 py-20 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#0d9488 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <h1 class="relative text-4xl font-bold text-white mb-4">Our Technology</h1>
+        <p class="relative text-slate-300 max-w-2xl mx-auto px-4 text-lg leading-relaxed">Our technology is engineered to deliver accurate, safe, and clinically reliable insights by combining advanced artificial intelligence with rigorous medical standards. Each component of our system is designed to support healthcare professionals while maintaining full transparency, security, and ease of integration.</p>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+            <div class="bg-white dark:bg-dark-card rounded-xl overflow-hidden shadow-sm hover-card border border-slate-100 dark:border-slate-700 lg:col-span-2">
+                <div class="h-48 overflow-hidden"><img src="/assets/AI Models Built on Medical Expertise.png" alt="AI Models" class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"></div>
+                <div class="p-6"><h3 class="text-xl font-bold mb-3 dark:text-white">AI Models Built on Medical Expertise</h3><p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Our diagnostic engine is powered by machine-learning models trained on large, diverse clinical datasets. These models recognize symptom patterns, risk factors, and disease indicators with high precision. We continuously refine our algorithms using updated medical guidelines, ensuring that every prediction reflects the latest scientific evidence and real-world clinical practice.</p></div>
+            </div>
+            <div class="bg-white dark:bg-dark-card rounded-xl overflow-hidden shadow-sm hover-card border border-slate-100 dark:border-slate-700 lg:col-span-2">
+                <div class="h-48 overflow-hidden"><img src="/assets/Secure and Structured Data Processing..png" alt="Secure Data Processing" class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"></div>
+                <div class="p-6"><h3 class="text-xl font-bold mb-3 dark:text-white">Secure and Structured Data Processing</h3><p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">All data provided to the system undergoes structured preprocessing to ensure accuracy and consistency. Patient information is analyzed using encrypted channels and processed only within secure environments. Our pipelines filter noise, verify input quality, and apply clinically validated decision rules before generating any output.</p></div>
+            </div>
+            <div class="bg-white dark:bg-dark-card rounded-xl overflow-hidden shadow-sm hover-card border border-slate-100 dark:border-slate-700 lg:col-span-2">
+                <div class="h-48 overflow-hidden"><img src="/assets/Clinically Validated Performance.png" alt="Clinical Validation" class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"></div>
+                <div class="p-6"><h3 class="text-xl font-bold mb-3 dark:text-white">Clinically Validated Performance</h3><p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Our system undergoes extensive validation with real clinical cases before deployment. We evaluate accuracy, sensitivity, specificity, and diagnostic reliability across multiple medical scenarios. Performance is reviewed alongside physicians and specialists to ensure the system meets clinical expectations and aligns with standard medical protocols.</p></div>
+            </div>
+            <div class="bg-white dark:bg-dark-card rounded-xl overflow-hidden shadow-sm hover-card border border-slate-100 dark:border-slate-700 lg:col-span-3">
+                <div class="h-48 overflow-hidden"><img src="/assets/Seamless Integration with Existing Systems.png" alt="Integration" class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"></div>
+                <div class="p-6"><h3 class="text-xl font-bold mb-3 dark:text-white">Seamless Integration with Existing Systems</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">We designed our platform for smooth implementation in hospitals, clinics, and enterprise environments. Through standardized APIs, secure data exchange, and flexible architecture, our technology integrates easily with:</p>
+                    <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 text-sm leading-relaxed space-y-1">
+                        <li>Hospital information systems (HIS)</li>
+                        <li>Electronic medical records (EMR)</li>
+                        <li>Laboratory and diagnostic platforms</li>
+                        <li>Mobile and web applications</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-dark-card rounded-xl overflow-hidden shadow-sm hover-card border border-slate-100 dark:border-slate-700 lg:col-span-3">
+                <div class="h-48 overflow-hidden"><img src="/assets/Safety Measures Embedded at Every Step.png" alt="Safety Measures" class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"></div>
+                <div class="p-6"><h3 class="text-xl font-bold mb-3 dark:text-white">Safety Measures Embedded at Every Step</h3>
+                    <ul class="list-disc list-inside text-slate-600 dark:text-slate-400 text-sm leading-relaxed space-y-1">
+                        <li>Multi-layered data protection</li>
+                        <li>Strict access controls</li>
+                        <li>Real-time error detection mechanisms</li>
+                        <li>Continuous monitoring of model performance</li>
+                    </ul>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mt-3">Every recommendation includes confidence levels and is designed to support—not replace—medical judgment.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-20">
+            <h2 class="text-2xl font-bold text-center mb-12 dark:text-white">Data Pipeline</h2>
+            <style>
+                @keyframes pulse-ring {
+                    0%, 100% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4); }
+                    50% { box-shadow: 0 0 0 15px rgba(13, 148, 136, 0); }
+                }
+                @keyframes slide-arrow {
+                    0%, 100% { transform: translateX(0); }
+                    50% { transform: translateX(8px); }
+                }
+                @keyframes bounce-up-down {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-8px); }
+                }
+                .pipeline-circle {
+                    animation: pulse-ring 2s infinite, bounce-up-down 3s infinite;
+                }
+                .pipeline-circle:nth-child(2) {
+                    animation-delay: 0s, 0.2s;
+                }
+                .pipeline-circle:nth-child(4) {
+                    animation-delay: 0.6s, 0.8s;
+                }
+                .pipeline-circle:nth-child(6) {
+                    animation-delay: 1.2s, 1.4s;
+                }
+                .pipeline-arrow {
+                    animation: slide-arrow 1.5s ease-in-out infinite;
+                }
+            </style>
+            <div class="flex flex-col md:flex-row justify-between items-center relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-slate-200 via-ai-500 to-slate-200 dark:from-slate-700 dark:via-ai-600 dark:to-slate-700 -z-10 transform -translate-y-1/2"></div>
+                <div class="pipeline-circle bg-white dark:bg-slate-800 p-6 rounded-full shadow-lg z-10 border-4 border-ai-500 dark:border-ai-400 w-40 h-40 flex flex-col items-center justify-center text-center"><i class="fa-solid fa-database text-ai-600 text-3xl mb-2"></i><span class="text-sm font-bold dark:text-white">Ingestion</span></div>
+                <i class="pipeline-arrow fa-solid fa-arrow-right text-ai-500 my-4 md:my-0 text-2xl"></i>
+                <div class="pipeline-circle bg-white dark:bg-slate-800 p-6 rounded-full shadow-lg z-10 border-4 border-sky-500 dark:border-sky-400 w-40 h-40 flex flex-col items-center justify-center text-center"><i class="fa-solid fa-microchip text-sky-600 text-3xl mb-2"></i><span class="text-sm font-bold dark:text-white">Processing</span></div>
+                <i class="pipeline-arrow fa-solid fa-arrow-right text-ai-500 my-4 md:my-0 text-2xl"></i>
+                <div class="pipeline-circle bg-white dark:bg-slate-800 p-6 rounded-full shadow-lg z-10 border-4 border-ai-500 dark:border-ai-400 w-40 h-40 flex flex-col items-center justify-center text-center"><i class="fa-solid fa-chart-line text-ai-600 text-3xl mb-2"></i><span class="text-sm font-bold dark:text-white">Insights</span></div>
+            </div>
+        </div>
+    </div>
+</div>

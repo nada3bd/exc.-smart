@@ -1,0 +1,18 @@
+/* FILENAME: styles/variables.css */
+
+:root {
+    --ai-500: #14b8a6;
+    --ai-600: #0d9488;
+    --sky-accent: #0ea5e9;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, var(--ai-600), var(--sky-accent));
+}
