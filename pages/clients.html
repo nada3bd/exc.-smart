@@ -1,0 +1,99 @@
+<!-- FILENAME: pages/clients.html -->
+<div class="page-transition">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="relative mb-6">
+            <h2 class="text-3xl font-bold text-center mb-4 dark:text-white">Who We Help</h2>
+            <p class="text-center text-slate-600 dark:text-slate-400 mb-12 max-w-3xl mx-auto">At Excellence Smart Solutions, our mission is to empower a wide range of users with intelligent, AI-driven solutions that improve efficiency, accuracy, and outcomes. We design our technology to meet the needs of healthcare providers, businesses, and individuals who seek reliable, data-driven support.</p>
+        </div>
+        <style>
+            .client-card{opacity:0;transform:translateY(18px);animation:fadeUp .64s cubic-bezier(.16,.84,.44,1) var(--delay,0s) forwards;border:1px solid rgba(2,6,23,0.04);box-shadow:0 6px 18px rgba(2,6,23,0.06);}
+            .client-card:hover{transform:translateY(-8px) scale(1.02);transition:transform .28s ease, box-shadow .28s ease;box-shadow:0 12px 30px rgba(2,6,23,0.12);}
+            .icon-wrap{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(2,6,23,0.04);box-shadow:0 6px 14px rgba(2,6,23,0.06)}
+            .client-card h3{letter-spacing:0.2px}
+            @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+        </style>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="client-card bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl" style="--delay:0.05s">
+                <div class="icon-wrap w-12 h-12 rounded-full bg-white/60 dark:bg-slate-700 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-user-md text-2xl text-yellow-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 dark:text-white">Medical Professionals</h3>
+                <p class="text-slate-600 dark:text-slate-400">Doctors, specialists, and allied health professionals benefit from real-time AI assistance, symptom analysis, and predictive diagnostics. Our tools help clinicians save time, improve accuracy, and stay updated with the latest medical knowledge.</p>
+            </div>
+
+            <div class="client-card bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl" style="--delay:0.12s">
+                <div class="icon-wrap w-12 h-12 rounded-full bg-white/60 dark:bg-slate-700 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-hospital text-2xl text-red-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 dark:text-white">Healthcare Providers</h3>
+                <p class="text-slate-600 dark:text-slate-400">We partner with hospitals, clinics, and medical centers to enhance clinical decision-making, reduce diagnostic errors, and streamline workflows. Our AI diagnostic system, Saleem Care, integrates seamlessly into healthcare operations to provide fast, evidence-based insights for better patient outcomes.</p>
+            </div>
+
+            <div class="client-card bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl" style="--delay:0.18s">
+                <div class="icon-wrap w-12 h-12 rounded-full bg-white/60 dark:bg-slate-700 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-building text-2xl text-indigo-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 dark:text-white">Businesses & Institutions</h3>
+                <p class="text-slate-600 dark:text-slate-400">Organizations looking to leverage AI for operational efficiency and digital transformation can rely on our customized solutions. We help businesses integrate AI, automate workflows, and make data-driven decisions with confidence.</p>
+            </div>
+
+            <div class="client-card bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl" style="--delay:0.24s">
+                <div class="icon-wrap w-12 h-12 rounded-full bg-white/60 dark:bg-slate-700 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-user text-2xl text-green-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 dark:text-white">Patients & Individuals</h3>
+                <p class="text-slate-600 dark:text-slate-400">Through the Saleem Care App, individuals gain access to reliable symptom assessment, personalized recommendations, and guidance on seeking timely medical care while keeping privacy and data security top of mind.</p>
+            </div>
+
+            <div class="client-card bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl" style="--delay:0.3s">
+                <div class="icon-wrap w-12 h-12 rounded-full bg-white/60 dark:bg-slate-700 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-university text-2xl text-pink-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 dark:text-white">Educational & Research Institutions</h3>
+                <p class="text-slate-600 dark:text-slate-400">We collaborate with universities and research centers to advance AI in healthcare, provide data-driven insights, and support the development of innovative medical solutions and research projects.</p>
+            </div>
+            <!-- Robot illustration placed in the empty grid cell (under Businesses & Institutions) -->
+            <div class="robot-cell p-4 flex items-center justify-center" style="--delay:0.36s">
+                <div class="robot-illustration" aria-hidden="true">
+                    <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+                        <defs>
+                            <linearGradient id="grad" x1="0%" x2="100%" y1="0%" y2="100%">
+                                <stop offset="0%" stop-color="var(--ai-500)" />
+                                <stop offset="100%" stop-color="var(--ai-600)" />
+                            </linearGradient>
+                        </defs>
+                        <!-- antenna -->
+                        <g class="robot-ant" transform="translate(100,18)">
+                            <line x1="0" y1="0" x2="0" y2="14" stroke="url(#grad)" stroke-width="4" stroke-linecap="round" />
+                            <circle cx="0" cy="20" r="6" fill="url(#grad)" />
+                        </g>
+
+                        <!-- head -->
+                        <rect x="46" y="36" rx="12" ry="12" width="108" height="78" fill="url(#grad)" />
+
+                        <!-- eyes -->
+                        <g class="eyes" transform="translate(0,0)">
+                            <ellipse class="robot-eye" cx="84" cy="74" rx="10" ry="10" fill="#fff" />
+                            <ellipse class="robot-eye" cx="116" cy="74" rx="10" ry="10" fill="#fff" />
+                            <circle cx="84" cy="74" r="4" fill="#07203a" />
+                            <circle cx="116" cy="74" r="4" fill="#07203a" />
+                        </g>
+
+                        <!-- mouth -->
+                        <rect x="80" y="96" width="40" height="8" rx="4" fill="#07203a" opacity="0.12" />
+
+                        <!-- body -->
+                        <rect x="36" y="120" rx="16" ry="16" width="128" height="76" fill="rgba(14,184,166,0.06)" stroke="url(#grad)" stroke-width="2" />
+
+                        <!-- arms -->
+                        <rect x="20" y="128" width="12" height="40" rx="6" fill="url(#grad)" />
+                        <rect x="168" y="128" width="12" height="40" rx="6" fill="url(#grad)" />
+
+                        <!-- small chest detail -->
+                        <rect x="92" y="140" width="16" height="22" rx="4" fill="url(#grad)" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

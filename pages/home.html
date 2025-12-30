@@ -1,0 +1,64 @@
+<!-- FILENAME: pages/home.html -->
+<div class="page-transition">
+    <div class="relative bg-white dark:bg-dark-bg overflow-hidden min-h-[90vh] flex items-center">
+        <canvas id="hero-canvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none;"></canvas>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <span class="inline-block py-1 px-3 rounded-full bg-ai-50 dark:bg-ai-900/30 text-ai-600 dark:text-ai-400 text-sm font-semibold mb-6 tracking-wide">
+                    Next Gen Intelligence
+                </span>
+                <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+                    Empowering Future with <br>
+                    <span class="text-gradient">Artificial Intelligence</span>
+                </h1>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    We build scalable, ethical, and powerful AI solutions that transform industries. Experience synergy of human creativity and machine intelligence.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <button onclick="router.navigate('services')" class="px-8 py-3 rounded-lg bg-ai-600 text-white font-medium hover:bg-ai-700 transition-all shadow-lg shadow-ai-500/30">
+                        Explore Solutions
+                    </button>
+                    <button onclick="router.navigate('about')" class="px-8 py-3 rounded-lg bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="relative hidden lg:block">
+                <div class="relative w-full h-96 animate-float">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop" alt="AI Visualization" class="rounded-2xl shadow-2xl shadow-ai-500/20 object-cover w-full h-full">
+                    <div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-lg flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-ai-100 p-2 rounded-full text-ai-600"><i class="fa-solid fa-check"></i></div>
+                        <div><p class="text-xs text-slate-500">Accuracy</p><p class="font-bold text-slate-800 dark:text-white">95.00%</p></div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-lg flex items-center gap-3 animate-bounce" style="animation-duration: 4s;">
+                        <div class="bg-sky-100 dark:bg-sky-900/30 p-2 rounded-full text-sky-600 dark:text-sky-400"><i class="fa-solid fa-robot"></i></div>
+                        <div><p class="text-xs text-slate-500">Projects</p><p class="font-bold text-slate-800 dark:text-white">4+</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-slate-50 dark:bg-dark-bg py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16"><h2 class="text-3xl font-bold text-slate-900 dark:text-white">Why Choose ExcellenceAI?</h2><div class="w-20 h-1 bg-ai-600 mx-auto mt-4 rounded-full"></div></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm hover-card text-center">
+                    <div class="w-16 h-16 bg-ai-100 dark:bg-ai-900/30 text-ai-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fa-solid fa-brain"></i></div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white">Deep Learning</h3>
+                    <p class="text-slate-600 dark:text-slate-400">Advanced neural networks designed to learn and adapt from complex data structures.</p>
+                </div>
+                <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm hover-card text-center">
+                    <div class="w-16 h-16 bg-sky-100 dark:bg-sky-900/30 text-sky-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white">Ethical AI</h3>
+                    <p class="text-slate-600 dark:text-slate-400">Committed to fairness, transparency, and accountability in every algorithm we build.</p>
+                </div>
+                <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm hover-card text-center">
+                    <div class="w-16 h-16 bg-teal-100 dark:bg-teal-900/30 text-teal-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-6"><i class="fa-solid fa-rocket"></i></div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white">Scalability</h3>
+                    <p class="text-slate-600 dark:text-slate-400">Solutions that grow with your business, from startup prototype to enterprise deployment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

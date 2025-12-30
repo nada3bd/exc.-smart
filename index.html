@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExcellenceAI</title>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- TAILWIND CONFIG (Must be loaded before CSS to process it) -->
+    <script src="scripts/tailwind-setup.js"></script>
+
+    <!-- MODULAR CSS (Direct links are more reliable than @import) -->
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body
+    class="bg-slate-50 text-slate-800 dark:bg-dark-bg dark:text-slate-100 font-sans antialiased overflow-x-hidden"
+  >
+    <!-- Loading Screen -->
+    <div id="loader">
+      <div class="flex flex-col items-center">
+        <i
+          class="fa-solid fa-microchip text-4xl text-ai-600 animate-bounce mb-4"
+        ></i>
+        <h2 class="text-xl font-semibold tracking-wider">ExcellenceAI</h2>
+      </div>
+    </div>
+
+    <!-- NAVBAR PLACEHOLDER -->
+    <div id="navbar-container"></div>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main id="app-container" class="pt-20 min-h-screen relative">
+      <!-- Content loads here -->
+    </main>
+
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="footer-container"></div>
+    <!-- Instead of the full <footer> tag, we use this div -->
+
+    <!-- Main Script (Module) -->
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>
