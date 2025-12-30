@@ -17,6 +17,9 @@ export function initRouter(startCanvasCallback, stopCanvasCallback) {
         // Inject
         container.innerHTML = html;
 
+        // Notify other modules that a new page was loaded
+        try { window.dispatchEvent(new Event('page:loaded')); } catch (e) { /* ignore */ }
+
         // Handle Canvas Logic
         if (pageId === "home") {
           startCanvasCallback();

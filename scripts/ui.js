@@ -60,6 +60,216 @@ function attachEventListeners() {
   if (btn) {
     btn.addEventListener("click", window.ui.toggleMobileMenu);
   }
+
+  // Ensure modal setup can run on initial load and after router page injections
+  async function setupLearnMoreModal() {
+    try {
+      // If modal already exists, skip re-insertion
+      if (!document.getElementById('learn-more-modal')) {
+        const res = await fetch('components/learn-more-modal.html');
+        if (!res.ok) return;
+        const html = await res.text();
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = html;
+        document.body.appendChild(wrapper.firstElementChild);
+      }
+
+      const modal = document.getElementById('learn-more-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const menu1 = document.getElementById('modal-menu-1-items');
+      const menu2 = document.getElementById('modal-menu-2-items');
+      const closeBtn = document.getElementById('modal-close');
+      const closeBtn2 = document.getElementById('modal-close-2');
+
+      const CONTENT = {
+        workflow: {
+          title: 'AI Workflow Automation Tools',
+          menu1: ['Process mining', 'RPA orchestration', 'Task routing', 'Monitoring'],
+          menu2: ['Integrations', 'Analytics dashboard', 'Security & audit']
+        },
+        enterprise: {
+          title: 'Enterprise AI Platforms',
+          menu1: ['Model management', 'Multi-tenant ops', 'Data pipelines'],
+          menu2: ['SLA & Support', 'Scaling & orchestration', 'Compliance']
+        },
+        custom: {
+          title: 'Custom AI & IT Solutions',
+          menu1: ['Solution scoping', 'Custom integrations', 'Deployment options'],
+          menu2: ['Training & handover', 'Maintenance', 'Consulting']
+        }
+      };
+
+      function openModal(id) {
+        const info = CONTENT[id] || CONTENT['custom'];
+        if (modalTitle) modalTitle.textContent = info.title;
+        if (menu1) menu1.innerHTML = info.menu1.map(i => `<li>${i}</li>`).join('');
+        if (menu2) menu2.innerHTML = info.menu2.map(i => `<li>${i}</li>`).join('');
+        if (modal) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeModal() {
+        if (modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (closeBtn2) closeBtn2.addEventListener('click', closeModal);
+      const overlay = document.querySelector('[data-modal-close]');
+      if (overlay) overlay.addEventListener('click', closeModal);
+      // Ensure single Escape listener
+      if (!window._learnMoreEscapeAttached) {
+        window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+        window._learnMoreEscapeAttached = true;
+      }
+
+      // Programmatically add Learn More buttons if not present in HTML
+      const cardTitles = {
+        'AI Workflow Automation Tools': 'workflow',
+        'Enterprise AI Platforms': 'enterprise',
+        'Custom AI & IT Solutions': 'custom'
+      };
+
+      document.querySelectorAll('.group').forEach(card => {
+        const h = card.querySelector('h4');
+        if (!h) return;
+        const id = cardTitles[h.textContent.trim()];
+        if (!id) return;
+        if (!card.querySelector('.learn-more-btn')) {
+          const b = document.createElement('button');
+          b.className = 'learn-more-btn mt-4 inline-block bg-ai-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-ai-500 transition-colors';
+          b.textContent = 'Learn More';
+          b.dataset.modalId = id;
+          const p = card.querySelector('p');
+          if (p) p.insertAdjacentElement('afterend', b);
+          else card.appendChild(b);
+        }
+      });
+
+      // Attach click listeners (remove previous to avoid duplicates)
+      document.querySelectorAll('.learn-more-btn').forEach(btn => {
+        btn.removeEventListener('click', btn._learnMoreHandler);
+        const handler = () => { const id = btn.dataset.modalId || 'custom'; openModal(id); };
+        btn._learnMoreHandler = handler;
+        btn.addEventListener('click', handler);
+      });
+
+    } catch (e) {
+      console.warn('Learn More modal setup failed', e);
+    }
+  }
+
+  // Run on initial load
+  setupLearnMoreModal();
+
+  // Re-run when router injects a new page
+  document.addEventListener('page:loaded', () => {
+    setupLearnMoreModal();
+  });
+
+  // Inject Learn More modal component (if present in components folder)
+  (async function injectLearnMoreModal() {
+    try {
+      const res = await fetch('components/learn-more-modal.html');
+      if (!res.ok) return;
+      const html = await res.text();
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html;
+      document.body.appendChild(wrapper.firstElementChild);
+
+      const modal = document.getElementById('learn-more-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const menu1 = document.getElementById('modal-menu-1-items');
+      const menu2 = document.getElementById('modal-menu-2-items');
+      const closeBtn = document.getElementById('modal-close');
+      const closeBtn2 = document.getElementById('modal-close-2');
+
+      const CONTENT = {
+        workflow: {
+          title: 'AI Workflow Automation Tools',
+          menu1: ['Process mining', 'RPA orchestration', 'Task routing', 'Monitoring'],
+          menu2: ['Integrations', 'Analytics dashboard', 'Security & audit']
+        },
+        enterprise: {
+          title: 'Enterprise AI Platforms',
+          menu1: ['Model management', 'Multi-tenant ops', 'Data pipelines'],
+          menu2: ['SLA & Support', 'Scaling & orchestration', 'Compliance']
+        },
+        custom: {
+          title: 'Custom AI & IT Solutions',
+          menu1: ['Solution scoping', 'Custom integrations', 'Deployment options'],
+          menu2: ['Training & handover', 'Maintenance', 'Consulting']
+        }
+      };
+
+      function openModal(id) {
+        const info = CONTENT[id] || CONTENT['custom'];
+        if (modalTitle) modalTitle.textContent = info.title;
+        if (menu1) menu1.innerHTML = info.menu1.map(i => `<li>${i}</li>`).join('');
+        if (menu2) menu2.innerHTML = info.menu2.map(i => `<li>${i}</li>`).join('');
+        if (modal) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeModal() {
+        if (modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (closeBtn2) closeBtn2.addEventListener('click', closeModal);
+      const overlay = document.querySelector('[data-modal-close]');
+      if (overlay) overlay.addEventListener('click', closeModal);
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+      // Programmatically add Learn More buttons if not present in HTML
+      const cardTitles = {
+        'AI Workflow Automation Tools': 'workflow',
+        'Enterprise AI Platforms': 'enterprise',
+        'Custom AI & IT Solutions': 'custom'
+      };
+
+      document.querySelectorAll('.group').forEach(card => {
+        const h = card.querySelector('h4');
+        if (!h) return;
+        const id = cardTitles[h.textContent.trim()];
+        if (!id) return;
+        if (!card.querySelector('.learn-more-btn')) {
+          const b = document.createElement('button');
+          b.className = 'learn-more-btn mt-4 inline-block bg-ai-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-ai-500 transition-colors';
+          b.textContent = 'Learn More';
+          b.dataset.modalId = id;
+          const p = card.querySelector('p');
+          if (p) p.insertAdjacentElement('afterend', b);
+          else card.appendChild(b);
+        }
+      });
+
+      // Attach click listeners
+      document.querySelectorAll('.learn-more-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = btn.dataset.modalId || 'custom';
+          openModal(id);
+        });
+      });
+
+    } catch (e) {
+      // silently fail if modal component isn't available
+      console.warn('Learn More modal injection failed', e);
+    }
+  })();
 }
 
 export function initThemeAfterLoad() {

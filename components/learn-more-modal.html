@@ -1,0 +1,23 @@
+<!-- FILENAME: components/learn-more-modal.html -->
+<div id="learn-more-modal" class="fixed inset-0 z-50 hidden items-center justify-center">
+  <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" data-modal-close></div>
+  <div class="bg-white dark:bg-dark-card rounded-2xl shadow-xl max-w-3xl w-full mx-4 overflow-hidden">
+    <div class="flex justify-between items-center p-4 border-b border-slate-200 dark:border-slate-700">
+      <h3 id="modal-title" class="text-xl font-bold dark:text-white">Product</h3>
+      <button id="modal-close" class="text-slate-500 hover:text-slate-900">✕</button>
+    </div>
+    <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <nav class="space-y-2">
+        <h4 class="font-semibold dark:text-white">Overview</h4>
+        <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1" id="modal-menu-1-items"></ul>
+      </nav>
+      <nav class="space-y-2">
+        <h4 class="font-semibold dark:text-white">Resources</h4>
+        <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1" id="modal-menu-2-items"></ul>
+      </nav>
+    </div>
+    <div class="p-4 border-t border-slate-200 dark:border-slate-700 text-right">
+      <button id="modal-close-2" class="bg-ai-600 text-white px-4 py-2 rounded-md">Close</button>
+    </div>
+  </div>
+</div>
